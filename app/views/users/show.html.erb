@@ -1,0 +1,22 @@
+<h1><strong><%= @user.name%>'s Profile</strong></h1>
+<h5><%= @user.email%></h5>
+<br>
+
+<h4>Boats Owned</h4>
+<% boats = @user.boats %>
+<% boats.each do |b| %>
+  <div class="">
+    <strong>Name: </strong><%= b.name %>
+  </div>
+  <div class="">
+    <strong>Location: </strong><%= b.location %>
+  </div>
+  <div class="">
+    <strong># of Containers: </strong><%= b.containers %>
+  </div>
+  <br>
+      <!-- if image gets an error -->
+  <% if b.image.url != "/images/original/missing.png" %>
+  <div><%= image_tag b.image.url(:medium) %></div>
+  <% end %>
+<% end %>

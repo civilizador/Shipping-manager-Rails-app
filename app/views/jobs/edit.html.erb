@@ -1,0 +1,9 @@
+<h1>Edit Job# <%= @job.id %></h1>
+
+ <%= form_for @job do |f| %>
+ How Many Containers Needed: <%= f.text_field :containers_needed %><br>
+ How Much will it Cost $<%= f.text_field :cost %><br>
+ Description of the Job: <%= f.text_area :description %><br>
+ <!-- List of Boats <%#= f.select :boat_id, options_from_collection_for_select( @boats, "id", "name") %><br> -->
+ <%= f.submit "Update Job" %>
+ <% end %>

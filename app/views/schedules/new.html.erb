@@ -1,0 +1,9 @@
+<h1>Schedule Your Boat</h1>
+
+<%= form_for @ do |f| %>
+ Origin: <%= f.text_field :origin %><br>
+ Destiation: $<%= f.text_field :destination %><br>
+Date: <%= f.datetime_field :date %>
+ Choose Your Boat <%= f.select :boat_id, options_from_collection_for_select( @boats, "id", "name") %><br>
+ <%= f.submit "Create A Job" %>
+<% end %>

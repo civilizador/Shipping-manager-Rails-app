@@ -1,0 +1,30 @@
+<div class='container'>
+  <h1>Work Schedule</h1>
+  <div class="row">
+
+<style>.lineOnSchedule {  word-wrap: break-word;}</style>
+
+    <% @schedules.each do |s| %>
+
+
+  <div   class='card' class="col-lg-3 col-md-6">
+    <div class="container">
+      <div class="lineOnSchedule"><strong>Date: </strong><%= s.date %></div>
+      <div class="lineOnSchedule"><strong>Origin: </strong><%= s.origin %></div>
+      <div class="lineOnSchedule"><strong>Destination: </strong><%= s.destination %></div>
+
+      <br>
+      <% this_name = User.find(s.job.user_id) %>
+      <div class="lineOnSchedule"><strong>Boat: </strong><%= s.boat.name %></div>
+      <div class="lineOnSchedule"><strong>Job: </strong><%= s.job.description %></div>
+      <div class="lineOnSchedule"><strong>Poster: </strong><%= this_name.name %></div>
+      <br>
+     <button class='btn btn-warning btn-sm'>  Remove </button>
+    </div>
+  </div>
+
+    <% end %>
+
+</div>
+  </div><!-- row -->
+</div><!-- container -->

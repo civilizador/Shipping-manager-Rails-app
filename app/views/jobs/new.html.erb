@@ -1,0 +1,10 @@
+<H1>Create a New Job</H1>
+
+<%= form_for @job do |f| %>
+ How Many Containers Needed: <%= f.text_field :containers_needed %><br>
+ How Much will it Cost $<%= f.text_field :cost %><br>
+ Description of the Job: <%= f.text_area :description %><br>
+ <%= f.submit "Create A Job" %>
+ <br>
+ <div id="errormessage"><%= @job.errors.full_messages.first if @job && @job.errors.any? %></div>
+<% end %>

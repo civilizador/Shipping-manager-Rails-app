@@ -1,0 +1,27 @@
+<div class='container'>
+	  <h1>List of all Boats</h1>
+		<br>
+	  <div class="row">
+
+	<style>.lineOnSchedule {  word-wrap: break-word;}</style>
+
+	  	 <% @boats.each do |b| %>
+
+
+	  <div   class='card' class="col-lg-3 col-md-6">
+	    <div class="container">
+
+
+ 			 	<div><strong>Boat name:</strong> <u><%= link_to b.name, b %></u></div>
+ 			 	<div><strong>Owner:</strong> <%= b.user.name %></div>
+ 			 	<div><strong>Boat location:</strong> <%=  b.location %></div>
+ 			 	<div><strong>Number of containers:</strong> <%=  b.containers %></div><br>
+
+	    </div>
+	  </div>
+
+	    <% end %>
+
+	</div>
+	  </div><!-- row -->
+	</div><!-- container -->

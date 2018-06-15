@@ -1,0 +1,15 @@
+<H1>Here is a list of all the Jobs</H1>
+
+
+<% @jobs.each do |j| %>
+<b>Job#</b> <%= j.id %> </a><br>
+<b>Description:</b> <%= j.description %><br>
+<b>Cost:</b> <%= j.cost %><br>
+<b>How many Containers Needed:</b> <%= j.containers_needed %><br>
+<b>Boat ID:</b> <%= j.boat_id %><br>
+<b>User ID:</b> <%= j.user_id %><br>
+<a href="/jobs/<%= j.id %>/edit"><b>Edit Job</b></a><br>
+<a href="/jobs/<%= j.id %>"><b>Schedule Job</b></a>
+ <br>
+ <hr>
+<% end %>

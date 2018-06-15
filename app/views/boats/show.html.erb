@@ -1,0 +1,21 @@
+<div><h1><strong><%= @boat.name%></strong></h1></div>
+<div>Owned by: <%= @boat.user.name %></div>
+<div><%= image_tag @boat.image.url(:large)%></div>
+<br>
+
+<div class="">
+  <h5>Job List</h5>
+</div>
+<% jobs = @boat.jobs %>
+<% jobs.each do |j| %>
+  <div class="">
+    <strong>Description: </strong><%= j.description %>
+  </div>
+  <div class="">
+    <strong>Cost: $</strong><%= j.cost%>
+  </div>
+  <div class="">
+    <strong>Containers Needed: </strong><%= j.containers_needed %>
+  </div>
+  <br>
+<%end%>
